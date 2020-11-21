@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 21:36:38 by user42            #+#    #+#             */
-/*   Updated: 2020/11/21 22:54:43 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/21 22:57:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,4 +170,6 @@ int		main(void)
 	ft_putendl_fd("il etait une fois 42", STDOUT_FILENO);
 	ft_putnbr_fd(42, STDOUT_FILENO);
 	ft_putchar_fd('\n', STDOUT_FILENO);
+
+	return (0);
 }
