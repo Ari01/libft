@@ -2,14 +2,21 @@
 
 NAME			= libft.a
 LIB				= ar cr
-TEST			= test
 
-SRCS			= $(wildcard *.c)
+BONUS			= bonus
+BONUSSRCS		= $(wildcard *.c)
+BONUSOBJS		= $(BONUSSRCS:.c=.o) 
+
+TEST			= test
+TESTDIR			= resources/
+TESTS			= test_part1 test_additional_functions test_bonus
+
+SRCS			= $(shell find . -name "*.c" | grep -v "lst" | grep -v "test")
 OBJS			= $(SRCS:.c=.o)
 
 CC				= clang
 CFLAGS			= -Wall -Wextra -Werror
-BSD				= -lbsd
+LDFLAGS			= -I . -lbsd
 RM				= rm -f
 
 # RULES 
@@ -19,17 +26,22 @@ all :			$(NAME)
 $(NAME) :		$(OBJS)
 				$(LIB) $@ $^
 
-$(TEST) :		$(OBJS)
-				$(CC) $(CLFAGS) -o $@ $^ $(BSD)
+$(BONUS) :		$(BONUSOBJS)
+				$(LIB) $(NAME) $^
+
+$(TEST) :		$(TESTS)
+
+$(TESTS) :		%: $(TESTDIR)%.c $(BONUSOBJS)
+				$(CC) $(CLFAGS) -o $@ $^ $(LDFLAGS)
 
 .c.o :
 				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 clean :
-				$(RM) $(OBJS)
+				$(RM) $(BONUSOBJS)
 
 fclean :		clean
-				$(RM) $(NAME) $(TEST)
+				$(RM) $(NAME) $(TESTS)
 
 re :			clean fclean all
 
