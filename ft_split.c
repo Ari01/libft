@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 18:07:17 by user42            #+#    #+#             */
-/*   Updated: 2020/11/19 14:48:54 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/22 17:02:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static size_t	get_nwords(char const *s, char c)
 	return (nwords);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		i;
@@ -62,8 +62,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	start = 0;
 	len = 0;
-	split = malloc(sizeof(*split) * (get_nwords(s, c) + 1));
-	if (!split)
+	if (!(split = malloc(sizeof(*split) * (get_nwords(s, c) + 1))))
 		return (NULL);
 	if (s)
 	{

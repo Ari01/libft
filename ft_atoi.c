@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:13:29 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 16:09:00 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/22 16:55:45 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	convert_atoi(const char *sub, size_t len, int sign)
 	pow = 1;
 	while (len--)
 	{
-		res += (sub[len] -'0') * pow;
+		res += (sub[len] - '0') * pow;
 		pow *= 10;
 	}
 	if (sign)

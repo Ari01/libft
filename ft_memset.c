@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 17:04:59 by user42            #+#    #+#             */
-/*   Updated: 2020/11/16 17:07:25 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/22 16:59:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
-	unsigned char *scpy;
+	size_t			i;
+	unsigned char	*scpy;
 
 	scpy = (unsigned char*)s;
 	i = 0;
