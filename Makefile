@@ -16,7 +16,7 @@ OBJS			= $(SRCS:.c=.o)
 
 CC				= clang
 CFLAGS			= -Wall -Wextra -Werror
-LDFLAGS			= -I . -lbsd
+LDFLAGS			= -I . -lbsd -L. -lft
 RM				= rm -f
 
 # RULES 
@@ -31,8 +31,8 @@ $(BONUS) :		$(BONUSOBJS)
 
 $(TEST) :		$(TESTS)
 
-$(TESTS) :		%: $(TESTDIR)%.c $(BONUSOBJS)
-				$(CC) $(CLFAGS) -o $@ $^ $(LDFLAGS)
+$(TESTS) :		%: $(TESTDIR)%.c $(BONUS)
+				$(CC) $(CLFAGS) -o $@ $< $(LDFLAGS)
 
 .c.o :
 				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
