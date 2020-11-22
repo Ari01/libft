@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 15:01:19 by user42            #+#    #+#             */
-/*   Updated: 2020/11/21 15:25:08 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/22 16:22:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,12 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	t_list *ite;
 
 	ite = *alst;
-	if (new)
+	if (!(*alst))
+		*alst = new;
+	else
 	{
-		if (!(*alst))
-			*alst = new;
-		else
-		{
-			while (ite->next)
-				ite = ite->next;
-			ite->next = new;
-		}
+		while (ite->next)
+			ite = ite->next;
+		ite->next = new;
 	}
 }
