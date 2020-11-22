@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:34:54 by user42            #+#    #+#             */
-/*   Updated: 2020/11/17 15:29:08 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/22 19:42:01 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*srccpy;
 	size_t				i;
 
+
+	if (dest == src)
+		return (NULL);
 	destcpy = (unsigned char *)dest;
 	srccpy = (const unsigned char *)src;
 	i = 0;

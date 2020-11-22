@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 14:30:25 by user42            #+#    #+#             */
-/*   Updated: 2020/11/22 16:07:05 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/22 19:59:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,8 @@ void	test_memmove(const void *src, int overlap, size_t n)
 	ftdest = ftsrc + overlap;
 	mandest = memmove(mandest, mansrc, n);
 	ftdest = ft_memmove(ftdest, ftsrc, n);
-	print_test_result(mandest, ftdest, n);
+	if (mandest && ftdest)
+		print_test_result(mandest, ftdest, n);
 	printf("\n");
 }
 
