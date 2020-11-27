@@ -1,7 +1,0 @@
-echo "\n"
-echo "PART 1 TESTS" && ./test_part1 | grep -a -n "test ko"
-echo "\n"
-echo "ADDITIONAL FUNCTIONS TESTS" && ./test_additional_functions | grep -a -n "test ko"
-echo "\n"
-echo "BONUS TESTS" && ./test_bonus | grep -a -n "test ko"
-echo "\n"
