@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:52:10 by user42            #+#    #+#             */
-/*   Updated: 2020/11/19 17:01:58 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/30 11:18:29 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,24 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char *s;
+	char			*s;
+	unsigned int	unbr;
 
-	s = ft_itoa(n);
-	if (s)
-		write(fd, s, ft_strlen(s));
+	unbr = n;
+	if (n < 0)
+	{
+		unbr = -n;
+		write(fd, "-", 1);
+	}
+	if (unbr < 10)
+	{
+		c = unbr + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(unbr / 10, fd);
+		c = unbr % 10 + '0';
+		write(fd, &c, 1);
+	}
 }
