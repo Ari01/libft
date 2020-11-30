@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 14:30:25 by user42            #+#    #+#             */
-/*   Updated: 2020/11/22 19:59:58 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/30 12:24:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -578,7 +578,7 @@ int		main(void)
 	printf("\n --------------------- STRNSTR ------------------------\n");
 	char *big = "il etait une fois 42";
 	size_t len = ft_strlen(big);
-	
+
 	test_strnstr(big, "il", len);
 	test_strnstr(big, "i", len);
 	test_strnstr(big, " ", len);
@@ -588,6 +588,25 @@ int		main(void)
 	test_strnstr(big, "il etait une fois 42", 5);
 	test_strnstr(big, "il etait une fois 42", 10);
 	test_strnstr(big, "il", 0);
+
+	char *test = "Hello wworld";
+	test_strnstr(test, "world", 100);
+	test_strnstr(test, "he", 100);
+	test_strnstr(test, "hl", 100);
+	test_strnstr(test, "ld", 100);
+	test_strnstr(test, "wld", 100);
+	test_strnstr(test, "world", 6);
+	test_strnstr(test, "he", 6);
+	test_strnstr(test, "hl", 6);
+	test_strnstr(test, "ld", 6);
+	test_strnstr(test, "wld", 6);
+
+	test_strnstr("", "world", 100);
+	test_strnstr("", "world", 0);
+	test_strnstr("world", "", 100);
+	test_strnstr("world", "", 0);
+	test_strnstr("", "", 100);
+	test_strnstr("", "", 0);
 
 	printf("\n --------------------- ATOI ------------------------\n");
 	test_atoi("2147483647");
@@ -605,6 +624,11 @@ int		main(void)
 	test_atoi(" -2147483648abc9");
 	test_atoi(" -+-+2147483648");
 	test_atoi("2147483647 ");
+	test_atoi("-5");
+	test_atoi("-10");
+	test_atoi("+42");
+	test_atoi("42");
+	test_atoi("-42");
 	test_atoi("");
 
 	printf("\n --------------------- CALLOC ------------------------\n");
