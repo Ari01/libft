@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:13:29 by user42            #+#    #+#             */
-/*   Updated: 2020/11/30 12:14:36 by user42           ###   ########.fr       */
+/*   Updated: 2020/12/02 03:35:56 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static int	ft_issign(char c)
 
 static int	convert_atoi(const char *s, int start, int end, int sign)
 {
-	int	res;
-	int pow;
+	unsigned int	res;
+	int				pow;
 
 	res = 0;
 	pow = 1;
@@ -39,8 +39,8 @@ static int	convert_atoi(const char *s, int start, int end, int sign)
 		pow *= 10;
 		end--;
 	}
-	if (sign)
-		res *= sign;
+	if (sign == -1)
+		return (-res);
 	return (res);
 }
 
